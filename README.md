@@ -2,6 +2,16 @@
 
 SimpleGrid is a Zend Framework 2 controller plugin that makes it extremely easy and flexible to setup a custom grid in your application. SimpleGrid doesn't create a grid for you it just makes it much easier to develop one. SimpleGrid uses sessions and unique namespaces to distinguish from other grids developed on your system. By using sessions and unique namespaces grid states stay unique. Any input or pull requests would be greatly appreciated.
 
+## Installation
+
+  Simple enable the module inside your application.config.php
+
+    return array(
+        'modules' => array(
+            'Application',
+            'SimpleGrid'
+        ),
+	
 ## Implementation Notes 
 
 Implementation of the module is quite simple.
