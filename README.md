@@ -4,7 +4,7 @@ SimpleGrid is a Zend Framework 2 controller plugin that makes it extremely easy 
 
 ## Installation
 
-  Simple enable the module inside your application.config.php
+  Simply enable the module inside your application.config.php
 
     return array(
         'modules' => array(
