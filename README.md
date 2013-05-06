@@ -146,8 +146,7 @@ Implementation of the module is quite simple.
     </form>
     <script>
     $('#grid-reset').click(function(e) {
-        window.location = '/admin/user';
-        return false;
+        $(this).closest('form').find('input[type=text], textarea, select').val('').submit();
     });
     $("input#created").datepicker({dateFormat: 'yy-mm-dd'});
     $("input#updated").datepicker({dateFormat: 'yy-mm-dd'});
