@@ -107,10 +107,10 @@ Implementation of the module is quite simple.
           <tr>
             <th class="sorting" style="width: 5%; text-align: center;"><a href="/admin/user/order/id/sort/<?php echo $switch ?>/page/<?php echo $this->page ?>">ID</a></th>
             <th class="sorting" style="width: 20%; text-align: left;"><a href="/admin/user/order/name/sort/<?php echo $switch ?>/page/<?php echo $this->page ?>">Customer Name</a></th>
-            <th class="sorting" style="width: 30%; text-align: left;"><a href="/admin/user/order/email/sort/<?php echo $switch ?>/page/<?php echo $this->page ?>">Email</a></th>
+            <th class="sorting" style="width: 20%; text-align: left;"><a href="/admin/user/order/email/sort/<?php echo $switch ?>/page/<?php echo $this->page ?>">Email</a></th>
             <th class="sorting" style="width: 30%; text-align: left;"><a href="/admin/user/order/address/sort/<?php echo $switch ?>/page/<?php echo $this->page ?>">Address</a></th>
-            <th class="sorting" style="width: 30%; text-align: left;"><a href="/admin/user/order/phone/sort/<?php echo $switch ?>/page/<?php echo $this->page ?>">Phone</a></th>
-            <th class="sorting" style="width: 30%; text-align: left;"><a href="/admin/user/order/newsletter/sort/<?php echo $switch ?>/page/<?php echo $this->page ?>">Newsletter</a></th>
+            <th class="sorting" style="width: 10%; text-align: left;"><a href="/admin/user/order/phone/sort/<?php echo $switch ?>/page/<?php echo $this->page ?>">Phone</a></th>
+            <th class="sorting" style="width: 5%; text-align: left;"><a href="/admin/user/order/newsletter/sort/<?php echo $switch ?>/page/<?php echo $this->page ?>">Newsletter</a></th>
           </tr>
         </thead>
         <tbody>
@@ -146,11 +146,34 @@ Implementation of the module is quite simple.
     </form>
     <script>
     $('#grid-reset').click(function(e) {
-        $(this).closest('form').find('input[type=text], textarea, select').val('').submit();
+        $(this).closest('form').find('input[type=text], select').val('').submit();
     });
     $("input#created").datepicker({dateFormat: 'yy-mm-dd'});
     $("input#updated").datepicker({dateFormat: 'yy-mm-dd'});
-    </script>  
+    </script>
+
+## Styling Tips
+
+  To get your inputs to play nicely inside the table cells, you need to tweak the margins a little. It's also a good idea to prevent those cells from wrapping.
+
+    table tbody tr td input {
+	    margin: 2px 2px;
+	    width: 90%;
+    }
+
+    table input[type="text"] {
+	    margin-bottom: 1px;
+    }
+
+    table thead tr a {
+	    margin-left: 2px;
+    }
+
+    tr.grid-inputs td {
+	    white-space: nowrap;
+	    text-align: left;
+	    vertical-align: top;
+    }  
 
 ## License
 
